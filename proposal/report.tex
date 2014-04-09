@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}    % need for subequations
+\usepackage{graphicx}   % need for figures
+\usepackage{verbatim}   % useful for program listings
+\usepackage{subfig}
+\usepackage{hyperref}   % use for hypertext links, including those to external
+                        % documents and URLs
+\usepackage{soul}       % strike latex
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{relsize}
+
+%% http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Margins
+\usepackage[margin=1in]{geometry}
+
+%% Suppress page numbering
+\pagenumbering{gobble}
+
+\renewcommand{\comment}[1]{}
+
+\usepackage{calc,amsmath}
+\newlength\dlf
+\newcommand\alignedbox[2]{
+  % #1 = before alignment
+  % #2 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #1$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \boxed{#1 #2}
+  \endgroup
+}
+
+\newcommand{\ind}[3]{#1_{#2}^{(#3)}}
+\newcommand{\alln}[1]{#1_{1:N}}
+\newcommand{\Prod}{\mathlarger{\prod}}
+\newcommand{\Sum}{\mathlarger{\sum}}
+
+%% Fit long URLs in BibTex
+\usepackage{hyperref}
+\urlstyle{same}
+
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{purple}{RGB}{128,0,128}
+\allowdisplaybreaks
+
+\begin{document}
+
+\title{COS 511: Project Proposal}
+\author{
+  Yi-Hsien (Stephen) Lin\\ yihsien@princeton.edu
+  \and
+  Akshay Mittal \\ akshay@princeton.edu
+}
+\date{}
+
+\maketitle
+
+\noindent We are interested in applying the knowledge of machine learning to
+the domain of
+ game theory. Many instances of game theoretic applications assume complete
+ availability of information in the games, but this might not be always
+ true~\cite{Blum:2006}. Also, repeated application of a machine learning
+ algorithm to the game might speed-up the achievement of the
+ equilibrium~\cite{Freund:1996}. Sponsored search
+ hosts an online auction among the advertisers to bid for the advertisements
+ that the latter wish to present to the customers. The achievement of the
+ equilibrium state in this case is also an application of the machine learning
+ algorithms to game theory and we expect to get better results since the
+complete domain knowledge in the game might not be available~\cite{He:2013}.\\
+
+\noindent As a part of this project study, we plan to study these three papers -
+\cite{Freund:1996},~\cite{Blum:2006},~\cite{He:2013} - in detail (more related
+ papers, if necessary) and attempt to improve upon the algorithms proposed. If
+ our attempt is successful we plan to apply that algorithm to a real game and
+ test the results and verify the validity of the algorithm compared to the
+ state-of-the-art models.
+
+
+{\footnotesize
+\bibliography{report}
+\bibliographystyle{unsrt}
+}
+\end{document}
